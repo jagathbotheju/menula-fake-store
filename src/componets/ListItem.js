@@ -11,7 +11,7 @@ const ListItem = ({ product }) => {
     <>
       <Stack
         sx={{ boxShadow: 3, borderRadius: 3, pl: 3 }}
-        direction={{ sm: "column", md: "row" }}
+        direction={{ xs: "column", sm: "column", md: "row" }}
       >
         <Box
           sx={{
@@ -40,7 +40,10 @@ const ListItem = ({ product }) => {
           <Typography fontWeight="bold" pl={3}>
             {product.title}
           </Typography>
-          <Typography pl={3}>
+          <Typography
+            pl={3}
+            sx={{ display: { xs: "none", sm: "none", md: "block" } }}
+          >
             {readMore
               ? product.description
               : `${product.description.substring(0, 200)}...`}
